@@ -1,0 +1,18 @@
+import com.google.gson.Gson;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import java.net.http.HttpClient;
+
+@Configuration // Le dice a Spring que esta clase define "Beans"
+public class AppConfig {
+
+    @Bean // Le dice a Spring que este método produce un objeto que debe gestionar
+    public HttpClient httpClient() {
+        return HttpClient.newHttpClient();
+    }
+
+    @Bean // Le dice a Spring que este método también produce un objeto gestionado
+    public Gson gson() {
+        return new Gson();
+    }
+}

@@ -1,0 +1,13 @@
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+public interface AutorRepository extends JpaRepository<Autor, Long> {
+    // Spring Data JPA creará automáticamente los métodos básicos como save(), findAll(), etc.
+
+    // Podemos agregar métodos de búsqueda personalizados.
+    // Este buscará un autor por su nombre.
+    Optional<Autor> findByNameContainsIgnoreCase(String nombre);
+}

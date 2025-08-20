@@ -1,0 +1,21 @@
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ChallengeLiteraluraApplication implements CommandLineRunner {
+
+	@Autowired // Spring inyecta la instancia de nuestra clase Principal
+	private Principal principal;
+
+	public static void main(String[] args) {
+		SpringApplication.run(ChallengeLiteraluraApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		// Al arrancar la aplicación, le decimos a la clase Principal que muestre el menú
+		principal.mostrarMenu();
+	}
+}

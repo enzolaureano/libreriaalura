@@ -1,0 +1,20 @@
+import jakarta.persistence.*;
+
+@Entity // Le dice a JPA que esta clase es una tabla en la base de datos.
+@Table(name = "autores") // Le da un nombre a la tabla.
+public class Autor {
+    @Id // Marca este campo como la clave primaria.
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // El ID se autogenera.
+    private Long id;
+
+    private String name;
+    
+    private int birthYear;
+    
+    private int deathYear;
+
+    // JPA requiere un constructor vacío.
+    public Autor() {}
+
+    // Getters, Setters...
+}
